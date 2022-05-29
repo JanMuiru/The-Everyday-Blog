@@ -1,0 +1,12 @@
+posts = [user.blogpost_set.first() for user in User.objects.prefetch_related('blogpost_set').filter(blogpost__date__gte=time).order_by("blogpost__date")]
+
+
+form = SearchForm()
+    posts = Posts.query.filter(Posts.content.like('%' + 'post.searched' + '%').order_by(Posts.title)
+
+    if form.validate_on_submit():
+        #get data from submitted form
+        post.searched = form.searched.data
+        #query the database
+        posts = posts.filter(Posts.content.like('%' + 'post.searched' + '%'))
+        posts = posts.order_by(Posts.title).all()

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Posts page
+{% endblock %}
+
+
+
+{% block content %}
+<div class="blog_content">
+    <h1>My Random Blogs...</h1>
+
+    {% for post in posts %}
+    <a href="{{ url_for('post', id=post.id)}}" class="click">
+          <div class="shadow p-3 mb-5 bg-body rounded">
+          <h2>{{ post.title}}</h2><br/>
+          <b>@{{ post.author}}</b><br/>
+          {{ post.slug}}<br/>
+          {{ post.content}}<br/><br/>
+
+          
+          
+          </div>
+    </a>
+    {%endfor%}
+    
+  </div>
+{% endblock %}

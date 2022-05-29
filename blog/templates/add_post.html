@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Add_Post page
+{% endblock %}
+
+
+
+{% block content %}
+<div class="Add_post_content">
+    <div class="shadow p-3 mb-5 bg-body rounded">
+    <form method="POST" class="form-it-enquire">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.title.label() }}
+            {{ form.title(class="form-control") }}
+
+            {{ form.author.label() }}
+            {{ form.author(class="form-control") }}
+
+            {{ form.slug.label() }}
+            {{ form.slug(class="form-control") }}
+
+            {{ form.content.label() }}
+            {{ form.content(class="form-control") }}
+        </div>
+            {{ form.submit(class="btn btn-success") }}
+    </div>   
+    </form>    
+</div>
+
+{% endblock %}
